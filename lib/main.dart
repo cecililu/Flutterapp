@@ -29,16 +29,17 @@ class _MyappState extends State<Myapp>{
   @override
   Widget build(BuildContext ctx) {
     var question = ['what is your favourite  color?', 'Who is your Favourite person'];
-
+    var answer1=["Red","greeen","Blue"];
+    // var answer2=["CECIL","CECILU","CECILi"];
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('Quiz App')),
         
         body: Column(children: [
            Question(questionText: question[_questionIndex], ),
-           ElevatedButton(child: Text("Aswew2"),onPressed: _answerQuestion,),
-           ElevatedButton(child: Text("Aswew3"),onPressed: (){},),
-           ElevatedButton(child: Text("Aswew4"),onPressed: (){},),
+           ElevatedButton(child: Text(answer1[0]),onPressed: _answerQuestion,),
+           ElevatedButton(child: Text(answer1[1]),onPressed: (){},),
+           ElevatedButton(child: Text(answer1[2]),onPressed: (){},),
           
         ]),
       ),
