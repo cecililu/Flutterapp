@@ -7,24 +7,23 @@ void main() => runApp(Myapp());
 
 
 class Myapp extends StatefulWidget {
+  const Myapp({super.key});
+
     @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
-    return MyappState();
+    
+    return _MyappState();
   }
   }
-  
-
-  
-class MyappState extends State<Myapp>{
-    var questionIndex=0;
+class _MyappState extends State<Myapp>{
+    var _questionIndex=0;
     void answerQuestion(){
-    setState((){
-        questionIndex=questionIndex+1;
+       setState((){
+        _questionIndex=_questionIndex+1;
     });
    
     print("Answer chosen ok");
-    print(questionIndex); 
+    print(_questionIndex); 
   }
   
   @override
@@ -36,7 +35,7 @@ class MyappState extends State<Myapp>{
         appBar: AppBar(title: Text('Quiz App')),
         
         body: Column(children: [
-           Text(question[questionIndex]),
+           Text(question[_questionIndex]),
            ElevatedButton(child: Text("Aswew2"),onPressed: answerQuestion,),
            ElevatedButton(child: Text("Aswew3"),onPressed: (){},),
            ElevatedButton(child: Text("Aswew4"),onPressed: (){},),
