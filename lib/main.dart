@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import './question.dart';
 // void main(){
 //    runApp (Myapp());
 //  }
@@ -35,7 +35,7 @@ class _MyappState extends State<Myapp>{
         appBar: AppBar(title: Text('Quiz App')),
         
         body: Column(children: [
-           Text(question[_questionIndex]),
+           Question(questionText: question[_questionIndex], ),
            ElevatedButton(child: Text("Aswew2"),onPressed: _answerQuestion,),
            ElevatedButton(child: Text("Aswew3"),onPressed: (){},),
            ElevatedButton(child: Text("Aswew4"),onPressed: (){},),
