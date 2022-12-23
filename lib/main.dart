@@ -7,6 +7,10 @@ void main() => runApp(Myapp());
 
 // ignore: use_key_in_widget_constructors
 class Myapp extends StatelessWidget {
+  void answerQuestion(){
+   print("Answer chosen ok");
+  }
+  
   @override
   Widget build(BuildContext ctx) {
     var question = ['what is your fave color', 'Who is your Favourite person'];
@@ -16,10 +20,11 @@ class Myapp extends StatelessWidget {
         appBar: AppBar(title: Text('FTX bitcoin')),
         
         body: Column(children: [
-          Text('Here are your question?'),
-          ElevatedButton(child: Text("Aswew2"),onPressed: () {},),
-          ElevatedButton(child: Text("Aswew3"),onPressed: () {},),
-          ElevatedButton(child: Text("Aswew4"),onPressed: () {},),
+          const Text('Here are your question?'),
+           
+           ElevatedButton(child: Text("Aswew2"),onPressed: answerQuestion,),
+           ElevatedButton(child: Text("Aswew3"),onPressed: answerQuestion,),
+           ElevatedButton(child: Text("Aswew4"),onPressed: answerQuestion,),
           
         ]),
       ),
