@@ -20,26 +20,38 @@ class Myapp extends StatefulWidget {
 }
 
 class _MyappState extends State<Myapp> {
-  void _answerQuestion() {
-    setState(() {
-      _questionIndex = _questionIndex + 1;
-    });
+  int _score = 0;
+  void _handler(int m) {
+                  _score = _score + 0;
+                  setState(() {
+                    _questionIndex = _questionIndex + 1;
+                  });
 
-    if (_questionIndex <= question.length) {
-      print("We have more question");
-    }
-  }
-
+                  if (_questionIndex <= question.length) {
+                    print("We have more question");
+                  }
+                }
   final question = const [
     {
-      'questionText': 'What is your favourite color',
-      'answer': ["Red", "greeen", "Blue", 'Black']
+      'questionText': 'What is capital of Nepal?',
+      'answer': [
+        ["Kathmandu", 100],
+        ["Delhi", 0],
+        ["Thimpu", 0],
+        ['Six', 0]
+      ]
     },
     {
-      'questionText': 'What is your favourite shoes',
-      'answer': ["Jordan1", "forums", "NB 550"]
+      'questionText': 'How many states are there in Nepal',
+      'answer': [
+        ["Ten", 0],
+        ["Eight", 0],
+        ["Seven", 100],
+        ['Six', 0]
+      ]
     },
   ];
+
   var _questionIndex = 0;
 
   @override
@@ -51,9 +63,10 @@ class _MyappState extends State<Myapp> {
             ? Quiz(
                 question: question,
                 questionIndex: _questionIndex,
-                handler: _answerQuestion)
+                handler: _handler,
+                )
             : Column(
-                children: [Text('Quiz Complete!'), Result()],
+                children: [Text('Quiz Complete!'), Result(score: _score)],
               ),
       ),
     );

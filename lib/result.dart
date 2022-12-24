@@ -5,9 +5,11 @@ import 'package:flutter/material.dart';
 
 
 class Result extends StatelessWidget {
-    const Result({super.key});
+  final int score;
+
+  const Result({super.key,required this.score});
   @override
     Widget build(BuildContext context) {
-      return Container(child: Center(child: Text("You Scored 1000pts"),));
+      return Container(child: Center(child: Text("You Scored ${score}"),));
     }
 }
