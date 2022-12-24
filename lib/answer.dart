@@ -9,6 +9,7 @@ class Answer extends StatelessWidget {
     return Container(
       width: double.infinity,
       child: ElevatedButton(
+        style: ButtonStyle(),
             child: Text('sa'),
             onPressed:selectHandler,
           ),
