@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 import './question.dart';
 import './answer.dart';
 import './quiz.dart';
+import './result.dart';
 
 // void main(){
 //    runApp (Myapp());
 //  }
-void main() => runApp(Myapp());
+void main() => runApp(const Myapp());
 
 class Myapp extends StatefulWidget {
   const Myapp({super.key});
@@ -45,14 +46,14 @@ class _MyappState extends State<Myapp> {
   Widget build(BuildContext ctx) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: Text('Quiz App')),
+        appBar: AppBar(title: const Text('Quiz App')),
         body: _questionIndex < question.length
             ? Quiz(
                 question: question,
                 questionIndex: _questionIndex,
                 handler: _answerQuestion)
-            : Center(
-                child: Text('Quiz Complete!'),
+            : Column(
+                children: [Text('Quiz Complete!'), Result()],
               ),
       ),
     );

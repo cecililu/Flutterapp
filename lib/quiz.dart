@@ -7,13 +7,12 @@ import './question.dart';
 import './answer.dart';
 
 class Quiz extends StatelessWidget {
-  final question;
+  final List<Map<String,Object>> question;
   
   final questionIndex;
   final VoidCallback handler;
 
   const Quiz({super.key,required this.question,required this.questionIndex, required this.handler});
-
   @override
   Widget build(BuildContext context) {
     return Column(
