@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 
 class Answer extends StatelessWidget {
   final VoidCallback selectHandler;
-  const Answer({super.key, required this.selectHandler});
+  final String answerText;
+  const Answer({super.key, required this.selectHandler,required this.answerText,});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +11,7 @@ class Answer extends StatelessWidget {
       width: double.infinity,
       child: ElevatedButton(
         style: ButtonStyle(),
-            child: Text('sa'),
+            child: Text(answerText),
             onPressed:selectHandler,
           ),
     );

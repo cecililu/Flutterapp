@@ -44,13 +44,16 @@ class _MyappState extends State<Myapp> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('Quiz App')),
-        body: Column(children: [
+        body: Column(
+          children: [
           Question(
-            questionText: question[_questionIndex],
-          ),
-          Answer(selectHandler: _answerQuestion),
-          Answer(selectHandler: _answerQuestion),
-          Answer(selectHandler: _answerQuestion),
+            questionText: question[_questionIndex]['questionText'] as String),
+
+          ...(question[_questionIndex]['answer'] as List<String>)
+               .map((answerOptions){
+                return Answer(selectHandler: _answerQuestion, answerText:answerOptions, );
+               }).toList()
+
         ]),
       ),
     );
